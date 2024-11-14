@@ -1,45 +1,74 @@
-name: CI
+# name: CI
 
-on:
-  push:
-    branches:
-      - main  # Adjust this based on your default branch
-  pull_request:
-    branches:
-      - main  # Adjust this based on your default branch
+# on:
+#   push:
+#     branches:
+#       - main  # Adjust this based on your default branch
+#   pull_request:
+#     branches:
+#       - main  # Adjust this based on your default branch
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest  # Can also use 'windows-latest' or 'macos-latest'
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '23.x'  # Adjust this to your Node.js version
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Run Jest tests and generate coverage report
+#         run: npm test -- --coverage
+
+#       - name: Check if coverage report exists
+#         run: |
+#           if [ -f "./client/coverage/lcov-report/lcov.info" ]; then
+#             echo "Coverage report found"
+#           else
+#             echo "Coverage report not found"
+#             exit 1
+#           fi
+
+#       - name: Upload coverage to Codecov
+#         uses: codecov/codecov-action@v3
+#         with:
+#           token: ${{ secrets.CODECOV_TOKEN }}
+#           files: './client/coverage/lcov-report/lcov.info'  # Correct path
+#           flags: unittests
+#           fail_ci_if_error: true
+name: Run tests and upload coverage
+
+on: 
+  push
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Can also use 'windows-latest' or 'macos-latest'
-
+    name: Run tests and collect coverage
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          node-version: '23.x'  # Adjust this to your Node.js version
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run Jest tests and generate coverage report
-        run: npm test -- --coverage
+      - name: Run tests
+        run: npx jest --coverage
 
-      - name: Check if coverage report exists
-        run: |
-          if [ -f "./client/coverage/lcov-report/lcov.info" ]; then
-            echo "Coverage report found"
-          else
-            echo "Coverage report not found"
-            exit 1
-          fi
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: './client/coverage/lcov-report/lcov.info'  # Correct path
-          flags: unittests
-          fail_ci_if_error: true
+          slug: Lam-Alexander/VillageVetTestingRound2
