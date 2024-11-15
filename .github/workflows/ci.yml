@@ -1,16 +1,17 @@
+
 name: CI
 
 on:
   push:
     branches:
-      - main # Adjust this based on your default branch
+      - main  # Adjust this based on your default branch
   pull_request:
     branches:
-      - main # Adjust this based on your default branch
+      - main  # Adjust this based on your default branch
 
 jobs:
   test:
-    runs-on: ubuntu-latest # Can also use 'windows-latest' or 'macos-latest'
+    runs-on: ubuntu-latest  # Can also use 'windows-latest' or 'macos-latest'
 
     steps:
       - name: Checkout code
@@ -19,19 +20,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "23.x" # Adjust this to your Node.js version
+          node-version: '23.x'  # Adjust this to your Node.js version
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run Jest tests and generate coverage report
+      - name: Run Jest tests and generate JUnit XML
         run: npm test -- --coverage
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: "./lcov.info"
-          # Correct path to your coverage file
-          flags: unittests
-          fail_ci_if_error: true
+          files: './reports/junit.xml'  # Path to the JUnit XML file
