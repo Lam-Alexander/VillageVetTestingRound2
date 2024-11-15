@@ -3,14 +3,14 @@ name: CI
 on:
   push:
     branches:
-      - main # Adjust this based on your default branch
+      - main  # Adjust this based on your default branch
   pull_request:
     branches:
-      - main # Adjust this based on your default branch
+      - main  # Adjust this based on your default branch
 
 jobs:
   test:
-    runs-on: ubuntu-latest # Can also use 'windows-latest' or 'macos-latest'
+    runs-on: ubuntu-latest  # Can also use 'windows-latest' or 'macos-latest'
 
     steps:
       - name: Checkout code
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "23.x" # Adjust this to your Node.js version
+          node-version: "23.x"  # Adjust this to your Node.js version
 
       - name: Install dependencies
         run: npm install
@@ -27,19 +27,10 @@ jobs:
       - name: Run Jest tests and generate coverage report
         run: npm test -- --coverage
 
-      - name: Check if coverage report exists
-        run: |
-          if [ -f "./client/coverage/lcov-report/lcov-report.json" ]; then
-            echo "Coverage report found"
-          else
-            echo "Coverage report not found"
-            exit 1
-          fi
-
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: "./client/coverage/lcov-report/lcov.info" # Correct path
+          files: './client/coverage/lcov-report/lcov.info'  # Correct path to your coverage file
           flags: unittests
           fail_ci_if_error: true
