@@ -34,3 +34,5 @@ jobs:
           files: './client/coverage/lcov-report/lcov.info'  # Correct path to your coverage file
           flags: unittests
           fail_ci_if_error: true
+
+          
