@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="2" failures="0" errors="0" time="0.478">
-  <testsuite name="PatientContext" errors="0" failures="0" skipped="0" timestamp="2024-11-15T23:28:46" time="0.352" tests="2">
-    <testcase classname="PatientContext provides the correct context values" name="PatientContext provides the correct context values" time="0.014">
+<testsuites name="jest tests" tests="2" failures="0" errors="0" time="0.361">
+  <testsuite name="PatientContext" errors="0" failures="0" skipped="0" timestamp="2024-11-15T23:31:18" time="0.241" tests="2">
+    <testcase classname="PatientContext provides the correct context values" name="PatientContext provides the correct context values" time="0.013">
     </testcase>
     <testcase classname="PatientContext throws an error when usePatient is used outside of a PatientProvider" name="PatientContext throws an error when usePatient is used outside of a PatientProvider" time="0.01">
     </testcase>
