@@ -14,7 +14,7 @@ module.exports = {
   ],
   testEnvironment: "jsdom",
   collectCoverage: true,
-  coverageDirectory: "./client/coverage", // Change this line to save coverage inside the client/coverage folder
+  coverageDirectory: "./coverage", // Change this line to save coverage inside the client/coverage folder
   coverageReporters: ["text", "lcov", "json", "cobertura"], // Choose the format for the coverage report
 
 };
