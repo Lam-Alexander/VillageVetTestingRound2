@@ -1,6 +1,5 @@
 [![codecov](https://codecov.io/gh/Lam-Alexander/VillageVetTestingRound2/graph/badge.svg?token=KKC1HLP5YV)](https://codecov.io/gh/Lam-Alexander/VillageVetTestingRound2)
 
-
 # July 25, 2024
 AuthGuard has been implemented please run this command on server side to install jsonwebtoken
 
