@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom"; // Import this to enable DOM matchers
+import "@testing-library/jest-dom";
 import { PatientProvider, usePatient } from "./PatientContext";
 
 describe("PatientContext", () => {
@@ -42,16 +42,19 @@ describe("PatientContext", () => {
 
   it("throws an error when usePatient is used outside of a PatientProvider", () => {
     const TestComponent = () => {
-      usePatient(); // This will throw an error
+      usePatient(); // This should throw
       return null;
     };
 
-    // Wrap the rendering in a function to test if it throws an error
-    const renderWithoutProvider = () => render(<TestComponent />);
+    // Temporarily suppress the error output
+    const originalError = console.error;
+    console.error = jest.fn();
 
-    // Expect the function to throw the error
-    expect(renderWithoutProvider).toThrow(
+    expect(() => render(<TestComponent />)).toThrow(
       "usePatient must be used within a PatientProvider"
     );
+
+    // Restore the console.error
+    console.error = originalError;
   });
 });
