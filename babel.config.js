@@ -1,7 +1,12 @@
 module.exports = {
-    presets: [
+  presets: [
+    [
       '@babel/preset-env',
-      '@babel/preset-react', // This will enable JSX transformation
+      {
+        targets: "defaults", // Or specify the environments you want to support
+        modules: 'auto', // Let Babel handle modules correctly
+      },
     ],
-  };
-  
+    '@babel/preset-react',
+  ],
+};

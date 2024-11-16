@@ -8,7 +8,7 @@
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
     "@mui/x-charts": "^7.21.0",
-    "@react-pdf/renderer": "^4.0.0",
+    "@react-pdf/renderer": "^4.0.2",
     "@sendgrid/mail": "^8.1.4",
     "@stripe/react-stripe-js": "^2.8.1",
     "@stripe/stripe-js": "^4.9.0",
@@ -58,6 +58,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
     "identity-obj-proxy": "^3.0.0",

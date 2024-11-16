@@ -1,20 +1,23 @@
 module.exports = {
+  // Other Jest config options
   transform: {
-    "^.+\\.jsx?$": "babel-jest", // This tells Jest to use Babel to transform JavaScript and JSX files
+    "^.+\\.[tj]sx?$": "babel-jest",
   },
   transformIgnorePatterns: [
-    "/node_modules/(?!your-package-to-transform|other-packages).+\\.js$", // Optional: Only transform specific node_modules packages if necessary
+    "/node_modules/(?!@react-pdf/renderer|@react-pdf/primitives|@supabase/auth-helpers-nextjs|jose).+\\.js$",
   ],
   moduleNameMapper: {
-    "\\.css$": "identity-obj-proxy", // Mock CSS imports
+    "\\.css$": "identity-obj-proxy",
   },
   reporters: [
     "default",
-    ["jest-junit", { outputDirectory: "./reports", outputName: "junit.xml" }], // Add JUnit reporter
+    ["jest-junit", { outputDirectory: "./reports", outputName: "junit.xml" }],
   ],
   testEnvironment: "jsdom",
   collectCoverage: true,
-  coverageDirectory: "./coverage", // Change this line to save coverage inside the client/coverage folder
-  coverageReporters: ["text", "lcov", "json", "cobertura"], // Choose the format for the coverage report
+  coverageDirectory: "./coverage",
+  coverageReporters: ["text", "lcov", "json", "cobertura"],
 
+  // Add the setupFiles option
+  setupFiles: ["<rootDir>/jest.setup.js"],
 };

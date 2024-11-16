@@ -1,9 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="2" failures="0" errors="0" time="0.635">
-  <testsuite name="PatientContext" errors="0" failures="0" skipped="0" timestamp="2024-11-15T23:35:40" time="0.418" tests="2">
-    <testcase classname="PatientContext provides the correct context values" name="PatientContext provides the correct context values" time="0.014">
+<testsuites name="jest tests" tests="8" failures="4" errors="0" time="1.7">
+  <testsuite name="PatientContext" errors="0" failures="0" skipped="0" timestamp="2024-11-16T00:38:50" time="0.41" tests="2">
+    <testcase classname="PatientContext provides the correct context values" name="PatientContext provides the correct context values" time="0.019">
     </testcase>
     <testcase classname="PatientContext throws an error when usePatient is used outside of a PatientProvider" name="PatientContext throws an error when usePatient is used outside of a PatientProvider" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="Login Component" errors="0" failures="4" skipped="0" timestamp="2024-11-16T00:38:50" time="1.455" tests="6">
+    <testcase classname="Login Component renders login form correctly" name="Login Component renders login form correctly" time="0.022">
+      <failure>TypeError: expect(...).toBeInTheDocument is not a function
+    at Object.toBeInTheDocument (/Users/alex/Documents/VillageVetTestingRound2/client/src/pages/login/Login.test.js:34:50)
+    at Promise.then.completed (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:121:9)
+    at run (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Login Component toggles between login and forgot password form" name="Login Component toggles between login and forgot password form" time="0.01">
+      <failure>TypeError: expect(...).toBeInTheDocument is not a function
+    at Object.toBeInTheDocument (/Users/alex/Documents/VillageVetTestingRound2/client/src/pages/login/Login.test.js:48:53)
+    at Promise.then.completed (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:121:9)
+    at run (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Login Component updates email and password state on input change" name="Login Component updates email and password state on input change" time="0.004">
+    </testcase>
+    <testcase classname="Login Component submits login form and navigates on success" name="Login Component submits login form and navigates on success" time="0.008">
+    </testcase>
+    <testcase classname="Login Component displays error on login failure" name="Login Component displays error on login failure" time="1.006">
+      <failure>TypeError: expect(...).toBeInTheDocument is not a function
+
+Ignored nodes: comments, script, style
+&lt;html&gt;
+  &lt;head /&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;div
+        class=&quot;login-container light-theme nunito-light&quot;
+      &gt;
+        &lt;div
+          class=&quot;sidebar&quot;
+        &gt;
+          &lt;img
+            alt=&quot;Logo&quot;
+            class=&quot;logo&quot;
+            src=&quot;/whitevillagetech.svg&quot;
+          /&gt;
+        &lt;/div&gt;
+        &lt;div
+          class=&quot;login-form-container&quot;
+        &gt;
+          &lt;img
+            alt=&quot;Logo&quot;
+            class=&quot;center-logo&quot;
+            src=&quot;/floweronly.svg&quot;
+          /&gt;
+          &lt;h2
+            class=&quot;welcome-text&quot;
+          &gt;
+            Welcome back!
+          &lt;/h2&gt;
+          &lt;form
+            class=&quot;login-form&quot;
+          &gt;
+            &lt;div
+              class=&quot;input-group&quot;
+            &gt;
+              &lt;label
+                class=&quot;input-label&quot;
+                for=&quot;employeeId&quot;
+              &gt;
+                Employee Email
+              &lt;/label&gt;
+              &lt;input
+                class=&quot;input nunito-light&quot;
+                id=&quot;employeeId&quot;
+                placeholder=&quot;Email&quot;
+                type=&quot;text&quot;
+                value=&quot;test@example.com&quot;
+              /&gt;
+            &lt;/div&gt;
+            &lt;div
+              class=&quot;input-group&quot;
+            &gt;
+              &lt;label
+                class=&quot;input-label&quot;
+                for=&quot;password&quot;
+              &gt;
+                Password
+              &lt;/label&gt;
+              &lt;input
+                class=&quot;input password-input nunito-light&quot;
+                id=&quot;password&quot;
+                placeholder=&quot;Password&quot;
+                type=&quot;password&quot;
+                value=&quot;wrongpassword&quot;
+              /&gt;
+              &lt;button
+                aria-label=&quot;Show password&quot;
+                class=&quot;eye-icon&quot;
+                type=&quot;button&quot;
+              /&gt;
+            &lt;/div&gt;
+            &lt;a
+              class=&quot;forgot-password nunito-bold&quot;
+              href=&quot;#&quot;
+            &gt;
+              Forgot password?
+            &lt;/a&gt;
+            &lt;p
+              class=&quot;error&quot;
+            &gt;
+              Incorrect username or password
+            &lt;/p&gt;
+            &lt;button
+              class=&quot;button nunito-light&quot;
+              type=&quot;submit&quot;
+            &gt;
+              Sign In
+            &lt;/button&gt;
+          &lt;/form&gt;
+          &lt;button
+            class=&quot;theme-toggle&quot;
+          &gt;
+            ☀️
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    at toBeInTheDocument (/Users/alex/Documents/VillageVetTestingRound2/client/src/pages/login/Login.test.js:105:66)
+    at runWithExpensiveErrorDiagnosticsDisabled (/Users/alex/Documents/VillageVetTestingRound2/client/node_modules/@testing-library/dom/dist/config.js:47:12)
+    at checkCallback (/Users/alex/Documents/VillageVetTestingRound2/client/node_modules/@testing-library/dom/dist/wait-for.js:124:77)
+    at checkRealTimersCallback (/Users/alex/Documents/VillageVetTestingRound2/client/node_modules/@testing-library/dom/dist/wait-for.js:118:16)
+    at Timeout.task [as _onTimeout] (/Users/alex/Documents/VillageVetTestingRound2/node_modules/jsdom/lib/jsdom/browser/Window.js:520:19)
+    at listOnTimeout (node:internal/timers:614:17)
+    at processTimers (node:internal/timers:549:7)</failure>
+    </testcase>
+    <testcase classname="Login Component handles password reset functionality" name="Login Component handles password reset functionality" time="0.012">
+      <failure>TypeError: expect(...).toBeInTheDocument is not a function
+    at Object.toBeInTheDocument (/Users/alex/Documents/VillageVetTestingRound2/client/src/pages/login/Login.test.js:130:85)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:575:9)
+    at processTimers (node:internal/timers:549:7)</failure>
     </testcase>
   </testsuite>
 </testsuites>
